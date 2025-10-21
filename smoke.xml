@@ -4,7 +4,7 @@
     <test name="Smoke Tests">
         <classes>
             <class name="testClasses.DashboardPageTest"/>
-<!--            <class name="testClasses.LoginPageTest"/>-->
+            <class name="testClasses.LoginPageTest"/>
         </classes>
     </test>
 </suite>
