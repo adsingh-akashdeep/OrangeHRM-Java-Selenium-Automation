@@ -11,11 +11,7 @@ public class LoginPageTest extends BaseClass {
     String username = ConfigReader.getProperty("username");
     String password = ConfigReader.getProperty("password");
 
-    @Test(groups = {"Smoke"})
-    @Epic("Authentication")
-    @Feature("Login Functionality")
-    @Story("User logins with valid credentials")
-    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 0, groups = {"Smoke"})
     @Description("Verify that user can log in with the valid credentials and lands on home page")
     public void verifySuccessfulLoginRedirectsToDashboardPage() {
         waitUtils.waitForElementToBeClickable(pageObjectManager.getLoginPage().getLoginButton());
@@ -25,22 +21,14 @@ public class LoginPageTest extends BaseClass {
         System.out.println(AppConstants.HomePageTitle);
     }
 
-    @Test(groups = {"Smoke"})
-    @Epic("User Interface")
-    @Feature("Logo Display")
-    @Story("User should be able to see the logo")
-    @Severity(SeverityLevel.NORMAL)
+    @Test(priority = 1, groups = {"Smoke"})
     @Description("Verify that user can see the logo when landed at loginPage")
     public void verifyOrangeHRMLogoIsDisplayedInLoginPage(){
         waitUtils.waitForElementToBeVisible(pageObjectManager.getLoginPage().getLogo());
         Assert.assertTrue(pageObjectManager.getLoginPage().logoDisplay(driver), "Logo should be displayed");
     }
 
-    @Test(groups = {"Smoke"})
-    @Epic("User Interface")
-    @Feature("Sample Credentials Display")
-    @Story("Login page displays the sample credentials")
-    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 2, groups = {"Smoke"})
     @Description("Verify that user can see the credentials sample to login")
     public void verifySampleCredentialsDisplayedAtLoginPage() {
         waitUtils.waitForElementToBeVisible(pageObjectManager.getLoginPage().getCredentialsUsername());

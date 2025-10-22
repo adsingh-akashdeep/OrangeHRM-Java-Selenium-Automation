@@ -17,11 +17,7 @@ public class AdminPageTest extends BaseClass {
     String username = ConfigReader.getProperty("username");
     String password = ConfigReader.getProperty("password");
 
-    @Test(groups = {"regression"})
-    @Epic("User Management")
-    @Feature("User Management Dropdown")
-    @Story("Dropdown displays all items")
-    @Severity(SeverityLevel.NORMAL)
+    @Test(priority = 0, groups = {"regression"})
     @Description("Verify that the User Management dropdown displays all available options.")
     public void verifyUserManagementDropdownDisplaysItems(){
         waitUtils.waitForElementToBeVisible(pageObjectManager.getLoginPage().getLoginButton());
@@ -37,11 +33,7 @@ public class AdminPageTest extends BaseClass {
 
     }
 
-    @Test(groups = {"regression"})
-    @Epic("Job Management")
-    @Feature("Jon Dropdown Menu")
-    @Story("Dropdown displays all menu Options")
-    @Severity(SeverityLevel.NORMAL)
+    @Test(priority = 1, groups = {"regression"})
     @Description("Verify that clicking on the Job dropdown shows all available options.")
     public void verifyJobDropdownDisplaysAllOptions(){
         waitUtils.waitForElementToBeVisible(pageObjectManager.getLoginPage().getLoginButton());
@@ -59,11 +51,7 @@ public class AdminPageTest extends BaseClass {
         System.out.println("Job Dropdown is functioning well as the text of first item matched well.");
     }
 
-    @Test(groups = {"regression"})
-    @Epic("User Management")
-    @Feature("System Users Search")
-    @Story("Search for a system user")
-    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 2, groups = {"regression"})
     @Description("Verify that entering data in the system users search inputs returns the accurate user results.")
     public void verifySystemUsersInputsFindAccurateUser() throws InterruptedException{
         waitUtils.waitForElementToBeClickable(pageObjectManager.getLoginPage().getLoginButton());

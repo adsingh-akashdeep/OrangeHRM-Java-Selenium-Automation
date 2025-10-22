@@ -64,7 +64,8 @@ public class DashboardPage {
     }
 
     // getters of private fields and clickable.
-    public WebElement getUpgradeButton(){return upgradeButton;}
+    public WebElement getUpgradeButton(){
+        return upgradeButton;}
     public WebElement getUserDropDownMenuButton(){
         return userDropDownMenu;
     }

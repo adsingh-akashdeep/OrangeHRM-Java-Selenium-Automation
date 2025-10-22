@@ -18,11 +18,7 @@ public class DashboardPageTest extends BaseClass {
     String username = ConfigReader.getProperty("username");
     String password = ConfigReader.getProperty("password");
 
-    @Test(groups = {"Smoke"})
-    @Epic("Upgrade Management")
-    @Feature("Upgrade Plan Functionality")
-    @Story("User clicks Upgrade Button")
-    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 0, groups = {"Smoke"})
     @Description("Verify that clicking on upgrade button redirects the user to the upgrade plan page.")
     public void verifyUpgradeButtonRedirectsUserToUpgradePage(){
         waitUtils.waitForElementToBeClickable(pageObjectManager.getLoginPage().getLoginButton());
@@ -42,11 +38,7 @@ public class DashboardPageTest extends BaseClass {
 
     }
 
-    @Test(groups = {"Smoke"})
-    @Epic("User Account Management")
-    @Feature("User Dropdown Menu")
-    @Story("Dropdown displays all menu options")
-    @Severity(SeverityLevel.NORMAL)
+    @Test(priority = 1, groups = {"Smoke"})
     @Description("Verify that clicking on the user dropdown shows all available options")
     public void verifyUserDropdownDisplaysAllOptions(){
         waitUtils.waitForElementToBeClickable(pageObjectManager.getLoginPage().getLoginButton());
@@ -59,11 +51,7 @@ public class DashboardPageTest extends BaseClass {
         System.out.println("Text is successfully retrieved");
     }
 
-    @Test(groups = {"Smoke"})
-    @Epic("Navigation")
-    @Feature("About Page Navigation")
-    @Story("Clicking About opens About Page")
-    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 2, groups = {"Smoke"})
     @Description("Verify that selecting the about option from menu navigates to the about page")
     public void verifyAboutItemOpensAboutPage() throws InterruptedException{
         waitUtils.waitForElementToBeClickable(pageObjectManager.getLoginPage().getLoginButton());
@@ -79,11 +67,7 @@ public class DashboardPageTest extends BaseClass {
         System.out.println("Text is successfully retrieved");
     }
 
-    @Test(groups = {"Smoke"})
-    @Epic("Navigation")
-    @Feature("Sidebar Menu")
-    @Story("Clicking menu button expands sidebar")
-    @Severity(SeverityLevel.NORMAL)
+    @Test(priority = 3, groups = {"Smoke"})
     @Description("Verify that clicking on the menu button expands the sidebar menu options.")
     public void verifyMenuButtonExpandsSidebarMenu(){
         waitUtils.waitForElementToBeClickable(pageObjectManager.getLoginPage().getLoginButton());
@@ -96,11 +80,7 @@ public class DashboardPageTest extends BaseClass {
         System.out.println("The Sidebar menu gets collapsed successfully.");
     }
 
-    @Test(groups = {"Smoke"})
-    @Epic("Support")
-    @Feature("Help Navigation")
-    @Story("Clicking on Help redirects to support page")
-    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 4, groups = {"Smoke"})
     @Description("Verify if help button is directing the user to support page in a new page.")
     public void verifyHelpIconsOpenHelpPage() throws InterruptedException{
         waitUtils.waitForElementToBeClickable(pageObjectManager.getLoginPage().getLoginButton());
@@ -119,11 +99,7 @@ public class DashboardPageTest extends BaseClass {
         System.out.println("Help page is opened successfully");
     }
 
-    @Test(groups = {"Smoke"})
-    @Epic("Navigation")
-    @Feature("Header Navigation")
-    @Story("Clicking OrangeHRM icon navigates to HRMS page")
-    @Severity(SeverityLevel.NORMAL)
+    @Test(priority = 5, groups = {"Smoke"})
     @Description("Verify that clicking on OrangeHRM icon redirects user to the HRMS homepage.")
     public void verifyOrangeHRMIconNavigatesToHRMSPage(){
         waitUtils.waitForElementToBeClickable(pageObjectManager.getLoginPage().getLoginButton());
@@ -134,11 +110,7 @@ public class DashboardPageTest extends BaseClass {
         Assert.assertEquals(driver.getTitle(), "Human Resources Management Software | HRMS | OrangeHRM", "Title should be exactly same");
     }
 
-    @Test(groups = {"Smoke"})
-    @Epic("Navigation")
-    @Feature("Search functionality")
-    @Story("Entering text in search box navigates correctly")
-    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 6, groups = {"Smoke"})
     @Description("Verify that entering a valid input in the search box redirects to the corresponding page.")
     public void verifyInputInSearchBoxRedirectsToCorrespondingPage(){
         waitUtils.waitForElementToBeClickable(pageObjectManager.getLoginPage().getLoginButton());
