@@ -1,9 +1,12 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.util.List;
 
 public class LoginPage {
     protected WebDriver driver;
@@ -17,7 +20,7 @@ public class LoginPage {
     private WebElement usernameInputBox;
     @FindBy(xpath = "//input[starts-with(@name,'pass')]")
     private WebElement passwordInputBox;
-    @FindBy(xpath = "//button[@class ='oxd-button oxd-button--medium oxd-button--main orangehrm-login-button']")
+    @FindBy(css = "[type='submit']")
     private WebElement loginButton;
     @FindBy(css = "div.orangehrm-login-branding > img")
     private WebElement logo;
@@ -38,6 +41,10 @@ public class LoginPage {
 
     public String[] credentialsSampleDisplay() {
         return new String[]{this.credentialsUsername.getText(), this.credentialsPassword.getText()};
+    }
+
+    public List<WebElement> requiredMessageDisplay(){
+        return driver.findElements(By.xpath("//span[text()='Required']"));
     }
 
     public WebElement getCredentialsUsername() {
