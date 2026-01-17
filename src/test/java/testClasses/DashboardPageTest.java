@@ -63,7 +63,7 @@ public class DashboardPageTest extends BaseClass {
         waitUtils.waitForElementToBeVisible(pageObjectManager.getDashboardPage().getVersionElement());
 
         String version = pageObjectManager.getDashboardPage().getVersionElement().getText();
-        Assert.assertEquals(version, "OrangeHRM OS 5.7", "Text should match.");
+        Assert.assertEquals(version, "OrangeHRM OS 5.8", "Text should match.");
         System.out.println("Text is successfully retrieved");
     }
 

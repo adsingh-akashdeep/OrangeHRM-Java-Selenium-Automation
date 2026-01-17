@@ -9,20 +9,21 @@
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
+        <!--  Selenium is a web automation tool  -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>4.19.1</version>
             <!--  use latest stable version  -->
         </dependency>
-        <!--  https://mvnrepository.com/artifact/org.testng/testng  -->
+        <!--  https://mvnrepository.com/artifact/org.testng/testng  testng runs selenium tests-->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>7.10.2</version>
             <scope>test</scope>
         </dependency>
-        <!--  Allure TestNG Adapter  -->
+        <!--  Allure TestNG Adapter to collect test result data -->
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-testng</artifactId>
@@ -31,6 +32,16 @@
     </dependencies>
     <build>
         <plugins>
+            <!--  Surefire is test-runner to execute test cases automatically  -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+                <configuration>
+                    <rerunFailingTestsCount>1</rerunFailingTestsCount>
+                </configuration>
+            </plugin>
+            <!-- Allure plugins generate html reports  -->
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
